@@ -1,0 +1,271 @@
+/*
+grey #626262
+white #fff
+lightgrey #a1a1a1
+hover blue #578199
+*/
+
+@font-face {
+    font-family: "Open Sans";
+    font-weight: 400;
+    src: url(fonts/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+}
+
+.container {
+    width: 1110px; /* ovo prebaciti na 1110px kada se skinu borderi*/
+    margin: 0 auto;
+}
+
+ul,
+ul li,
+ul li a {
+    text-decoration: none;
+    list-style: none;
+    text-indent: 0;
+}
+
+/* footer */
+
+footer {
+    background-color: #626262;
+    width: 100%;
+}
+
+.footer-container {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* address bar */
+
+.address,
+.contact {
+    padding: 36px 50px;
+}
+
+.logo,
+.address ul li:first-child {
+    margin-bottom: 25px;
+}
+
+.phone-icon,
+.social-media-icons {
+    margin-top: 40px;
+}
+
+.address ul li {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 31px;
+}
+
+.address ul li:first-child {
+    font-size: 25px;
+    letter-spacing: 2px;
+    line-height: 31px;
+}
+
+.phone-icon a:hover,
+.email-icon a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    filter: invert(50%) sepia(11%) saturate(1370%) hue-rotate(158deg) brightness(92%) contrast(84%);
+}
+
+.social-media-icons img {
+    margin-right: 9px;
+    transition: filter 200ms ease-out;
+}
+
+.social-media-icons img:hover {
+    filter: invert(50%) sepia(11%) saturate(1370%) hue-rotate(158deg) brightness(92%) contrast(84%);
+}
+
+/* contact form */
+
+.contact-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 6px;
+}
+
+.contact-form label {
+    grid-column-start: span 2;
+    font-size: 25px;
+    letter-spacing: 2px;
+    line-height: 31px;
+}
+
+.form-fields {
+    background-color: #626262;
+    border: 1px solid #777;
+    border-radius: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 31px;
+    padding: 6px 8px;
+}
+
+.form-fields:focus {
+    outline: none;
+}
+
+.form-fields:hover {
+    border: 1px solid #578199;
+}
+
+.form-fields::placeholder {
+    opacity: 1;
+    color: #fff;
+}
+
+.form-textarea {
+    grid-column-start: span 2;
+    resize: none;
+}
+
+.submit-btn {
+    grid-column-start: 2;
+    justify-self: end;
+    border-radius: 28px;
+    width: 218px;
+    padding: 12px 0;
+    margin-top: 30px;
+}
+
+.submit-btn:active {
+    background-color: #fff;
+    color: #578199;
+}
+
+/* copyright line */
+
+.copyright {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* back to top button */
+
+.back-to-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    background-color: #a1a1a1;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.arrow1, .arrow2 {
+    display: block;
+    background-color: #626262;
+    width: 20px;
+    height: 4px;
+}
+
+.arrow1 {
+    transform: rotate(-45deg) translate(-8px, 29px);
+}
+
+.arrow2 {
+    transform: rotate(45deg) translate(34px, -3px);
+}
+
+/**************************************/
+/*** Media query **************/
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        width: 900px;
+    }
+
+    .address,
+    .contact {
+        padding: 36px 39px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        width: 740px;
+    }
+
+    .address,
+    .contact {
+        padding: 36px 30px;
+    }
+
+    .contact-form {
+        display: block;
+    }
+
+    .form-fields {
+        margin: 8px 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 550px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        order: 1;
+    }
+
+    .address {
+        order: 2;
+        display: grid;
+        justify-items: center;
+    }
+
+    ul {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+    }
+
+    .phone-icon img,
+    .email-icon img {
+        display: block;
+        margin: 20px auto 5px auto;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        width: 420px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 350px;
+    }
+}

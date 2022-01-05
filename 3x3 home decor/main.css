@@ -1,0 +1,165 @@
+/* abel-regular - latin */
+@font-face {
+    font-family: 'Baskervville';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('fonts/Baskervville-Regular.ttf') format('truetype')
+  }
+  
+
+/* barlow-regular - latin */
+@font-face {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/barlow-v5-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('fonts/barlow-v5-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/barlow-v5-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/barlow-v5-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('fonts/barlow-v5-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/barlow-v5-latin-regular.svg#Barlow') format('svg'); /* Legacy iOS */
+}
+
+  /* 
+  
+copper color - #cb9e61
+
+  */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+}
+
+.barlow {
+    font-family: 'Barlow', sans-serif;
+}
+
+.baskervville {
+    font-family: 'Baskervville', serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.background-image {
+    background-image: url("img/cropped-background-image.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+.flex-vert-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 820px;
+}
+
+h1 {
+    padding: 10px 0 30px 0;
+    font-size: 36px;
+    color: #cb9e61;
+    text-align: center;
+}
+
+.decor-image-grid {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    width: 790px;
+}
+
+.decor-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 230px;
+    width: 230px;
+    margin: 0 7px;
+    position: relative;
+}
+
+.image-1 {
+    background-image: url(img/img-cat.png);
+}
+.image-2 {
+    background-image: url(img/img-giraffes.png);
+}
+.image-3 {
+    background-image: url(img/img-toy.png);
+}
+.image-4 {
+    background-image: url(img/img-pot-and-plant.png);
+}
+.image-5 {
+    background-image: url(img/img-kids-thing.png);
+}
+.image-6 {
+    background-image: url(img/img-chair.png);
+}
+.image-7 {
+    background-image: url(img/img-dry-plant.png);
+}
+.image-8 {
+    background-image: url(img/img-home.png);
+}
+.image-9 {
+    background-image: url(img/img-shelf-decor.png);
+}
+
+.hover-info {
+    background-color: #8c8c8c;
+    color: white;
+    width: auto;
+    font-size: 12px;
+    padding: 6px 10px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s, visibility 0.8s;
+}
+
+.decor-image:hover .hover-info {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+footer {
+    max-width: 550px;
+    padding: 20px;
+    font-size: 12px;
+    color: #8c8c8c;
+    text-align: center;
+}
+
+
+/****************************************************/
+/***************      MQ     ***********************/
+
+@media only screen and (max-width: 1200px) {
+    .decor-image-grid {
+        max-width: 516px;
+    }
+    .flex-vert-center {
+        width: 516px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .decor-image-grid {
+        max-width: 244px;
+    }
+    .flex-vert-center {
+        width: 244px;
+    }
+}

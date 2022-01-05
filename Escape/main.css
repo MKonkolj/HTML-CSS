@@ -1,0 +1,353 @@
+/* Background image treba da ima tint do 35% */
+/* white color #ffffff */
+
+@font-face {
+    font-family: 'Brandon-Grotesque';
+    font-style: normal;
+    font-weight: bold;
+    src: local(''),
+         url('fonts/Brandon_bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Brandon-Grotesque';
+    font-style: normal;
+    font-weight: 300;
+    src: local(''),
+         url('fonts/Brandon_light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Brandon-Grotesque';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+         url('fonts/Brandon_medium.otf') format('opentype');
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.background-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0,0,0,.35);
+    background-blend-mode: multiply;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*********   Helperi/Reset   ************/
+
+a,
+ul,
+ul li {
+    text-indent: 0;
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 2;
+}
+
+a, a:hover, a:active {
+    color: #fff;
+}
+
+/************   Header   ***************/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+nav img {
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.menu-items-container {
+    display: flex;
+}
+
+.menu-items-container li {
+    display: block;
+    align-items: center;
+    margin-right: 30px;
+    padding: 2px 5px;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Brandon-Grotesque';
+    font-weight: 500;
+    position: relative;
+}
+
+.menu-items-container li a {
+    height: 46px;
+}
+
+.menu-items-container li:hover {
+    text-decoration: overline;
+    text-decoration-thickness: 3px;
+}
+
+.menu-items-container li:active {
+    text-decoration: none;
+}
+
+.dropdown {
+    position: absolute;
+    top: 46px;
+    left: -15px;
+    background-color: #fff;
+    width: 200px;
+    border-radius: 23px 0;
+}
+
+.dropdown li {
+    color: #0f010d;
+    margin: 0;
+    justify-content: flex-start;
+    padding: 15px 20px;
+}
+
+.dropdown.hidden {
+    display: none;
+}
+
+/************   Section   **************/
+
+.hero {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h6, #learnBtn {
+    font-family: 'Brandon-Grotesque';
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 66px;
+    letter-spacing: -2px;
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+h6 {
+    font-size: 32px;
+    letter-spacing: -1px;
+    font-weight: 300;
+}
+
+#learnBtn {
+    height: 60px;
+    width: 240px;
+    margin-top: 82px;
+    border: 3px solid #fff;
+    border-radius: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    font-weight: bold;
+    transition: 
+        background-color 500ms ease-in,
+        color 500ms ease-in,
+        border-radius 500ms ease-in;
+}
+
+#learnBtn:hover {
+    background-color: #fff;
+    color: #0f010d;
+    border-radius: 0 30px;
+}
+
+#learnBtn:active {
+    background-color: transparent;
+    transition: 0ms;
+    color: #fff;
+}
+
+.burger {
+    display: none;
+    margin-right: 7px;
+}
+
+.bar {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    transition: all 300ms ease-in;
+}
+
+.bar1 {
+    margin: 5px 0;
+    border-radius: 5px 0 0 0;
+}
+
+.bar2 {
+    margin: 5px 0;
+}
+
+.bar3 {
+    margin: 5px 0;
+    border-radius: 0 0 5px 0;
+}
+
+/************   Media query   **************/
+
+@media (max-width: 1200px) {
+    .container {
+        width: 75%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    h6 {
+        font-size: 32px;
+    }
+    #learnBtn {
+        height: 45px;
+        width: 180px;
+        font-size: 16px;
+        border: 2px solid #fff;
+    }
+
+    .menu-items-container li:hover {
+        text-decoration: none;
+    }
+
+    .menu-items-container li a {
+        color: #0f010d;
+    }
+
+
+    /* burger animation */
+
+    .menu-items-container {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .menu-items-container {
+        display: grid;
+        position: absolute;
+        top: 50px;
+        left: -120%;
+        width: 100%;
+        padding: 30px;
+        background-color: rgba(0, 0, 0, 0.6);
+        transition: .5s;
+    }
+
+    .menu-items-container.show {
+        left: 0;
+    }
+
+    .menu-items-container li  {
+        color: #0f010d;
+        margin: 0 0 10px 0;
+        padding: 5px 10px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 20px 0 20px 0;
+        transition: border-radius 500ms ease-out,
+                    color 100ms ease-out,
+                    background-color 100ms ease-out;
+    }
+
+    .menu-items-container li:last-child {
+        margin-bottom: 0;
+    }
+
+    .menu-items-container li:hover {
+        border-radius: 0 20px 0 20px;
+    }
+
+    .menu-items-container li:active {
+        border-radius: 20px 20px 20px 20px;
+    }
+
+    .bar1.show {
+        transform: rotate(-45deg) translate(-7px, 7px);
+        border-radius: 20px 0 20px 0;
+    }
+
+    .bar2.show {
+        opacity: 0;
+    }
+
+    .bar3.show {
+        transform: rotate(45deg) translate(-7px, -7px);
+        border-radius: 20px 0 20px 0;
+    }
+
+    .dropdown {
+        margin: 0 auto;
+        position: static;
+        width: 200px;
+        border-radius: 23px 0;
+    }
+    
+    .dropdown li {
+        color: #0f010d;
+        justify-content: flex-start;
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
+    h6 {
+        font-size: 21px;
+    }
+}

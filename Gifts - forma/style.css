@@ -1,0 +1,236 @@
+/*
+#fdfdfb - white background
+#cb9d61 - orange / button, font
+#808183 - gray small font
+81% opacity sign up form
+*/
+
+/*
+font-family: 'Barlow', sans-serif;
+font-family: 'Libre Baskerville', serif;
+font-family: 'Montserrat', sans-serif;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.reset,
+.reset:hover,
+.reset:focus {
+    border: none;
+    outline: none;
+}
+
+.container {
+    width: 1300px;
+    margin: 25px auto 90px auto;
+}
+
+.background {
+    background-image: url(img/background-white.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 800px;
+}
+
+.background::before {
+    content: "";
+    background-image: url(img/sneg-before.png);
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 290px;
+    width: 100%;
+    z-index: 1;
+}
+
+.background::after {
+    content: "";
+    background-image: url(img/green-after.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 190px;
+    width: 450px;
+    position: absolute;
+    bottom: -98px;
+    right: 15px;
+    z-index: -1;
+}
+
+h1 {
+    font-size: 35px;
+    color: #cb9e61;
+    font-family: "Baskerville";
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    top: 50px;
+}
+
+h1 span {
+    display: block;
+    margin: 0 auto;
+}
+
+.sign-up-form {
+    background-color: rgba(255, 255, 255, 0.81);
+    padding: 55px 45px 40px 45px;
+    width: 544px;
+    position: absolute;
+    left: 50%;
+    top: 300px;
+    transform: translateX(-50%) ;
+}
+
+.input-box {
+    display: block;
+    width: 100%;
+    font-size: 11px;
+    line-height: 11px;
+    color: #808183;
+    font-family: "Montserrat";
+    background-color: #fff;
+    padding: 14px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #808183;
+}
+
+.input-box:focus {
+    outline: none;
+}
+
+.input-box::placeholder {
+    text-transform: uppercase;
+}
+
+.submit-btn {
+    background-color: #cb9d61;
+    color: #fff;
+    font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 23px;
+    font-family: "Baskerville";
+    padding: 10px 0;
+    margin-bottom: 21px;
+    width: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+}
+
+.submit-btn:hover {
+    background-image: linear-gradient(#cb9d61, #c99044);
+}
+
+.submit-btn:active {
+    background-image: linear-gradient(#e0a251, #c99044);
+}
+
+.sign-up-form p {
+    font-size: 14px;
+    color: #808183;
+    font-family: "Barlow";
+}
+
+
+/********************************/
+/* media query */
+@media only screen and (max-width: 1400px) {
+    .container {
+        width: 1050px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        width: 850px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        width: 650px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .sign-up-form {
+        width: 415px;
+    }
+
+    .background::after {
+        width: 310px;
+        right: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 470px;
+    }
+
+    .sign-up-form {
+        width: 340px;
+        padding: 45px 35px 30px 35px;
+    }
+
+    h1 span {
+        width: 265px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        width: 380px;
+    }
+
+    .sign-up-form {
+        width: 290px;
+        padding: 35px 25px 20px 25px;
+    }
+
+    .background {
+        height: 640px;
+    }
+
+    .background::after {
+        width: 220px;
+        right: 10px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    .sign-up-form p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 320px;
+    }
+
+    .sign-up-form {
+        width: 250px;
+        top: 180px;
+        padding: 35px 25px 20px 25px;
+    }
+}
+
+
+/* pozicioniranje forme treba i top/bottom da bude sa top 300px, brisao sam margin i sa elemnta i sa media queria  */
+/* kada se samnji rez da bude sve u jednom ekranu, smanjiti razmak između h1 i forme*/

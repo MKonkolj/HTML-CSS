@@ -1,0 +1,8 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="70" height="70">
+	<title>icon</title>
+	<style>
+		tspan { white-space:pre }
+		.s0 { fill: #ffffff } 
+	</style>
+	<path id="icon" class="s0" d="m0.01 35l13.39-4.37l21.59 10.8l22.69-11.07l12.3 4.65l-34.99 17.49l-34.99-17.49zm0-17.49l34.99-17.49l34.99 17.49l-34.99 17.49l-34.99-17.49zm34.99 41.41l22.69-11.07l12.3 4.65l-34.99 17.49l-34.99-17.49l13.39-4.37l21.59 10.8z" />
+</svg>
