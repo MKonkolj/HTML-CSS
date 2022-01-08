@@ -1,0 +1,156 @@
+/*
+Da li je html struktira dobra? Konkretno to što ide div pa nav pa tek onda header? Da li je bolje sve to strpati u header?
+*/
+
+:root {
+    --pre-nav-grey: #e1e1e1;
+    --pre-nav-text: #707070;
+    --white: #fff;
+    --orange: #fcb440;
+    --grey: #636363;
+    --light-blue: #578199;
+}
+
+@font-face {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    src: url(fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    src: url(fonts/OpenSans-Bold.ttf);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* text styling ***************************************************/
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 53px;
+    color: var(--white);
+}
+
+h2,
+p,
+a {
+    font-size: 21px;
+    color: var(--grey);
+}
+
+h2 {
+    font-size: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: var(--orange);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--grey);
+    border: 1px solid var(--grey);
+    padding: 10px 46px;
+}
+
+.button:hover {
+    background-color: var(--orange);
+    text-decoration: none;
+}
+
+.section-4 h2,
+.section-4 p,
+.section-4 a {
+    color: var(--white);
+}
+
+/* utilities ********************************************************/
+
+.container {
+    width: min(90%, 1100px);
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+}
+
+/* nav & header styling *********************************************/
+
+.pre-nav {
+    background-color: var(--pre-nav-grey);
+}
+
+.pre-nav .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
+}
+
+.search-btn {
+    display: inline-block;
+    background-image: url(icons/search-icon.png);
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 15px;
+}
+
+.pre-nav a {
+    font-size: 14px;
+    color: var(--pre-nav-text);
+}
+
+.header-background {
+    background-image: url(img/header-background-overlay.png), url(img/header-background-1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 895px;
+}
+
+/* sections styling *******************************************/
+
+.section-1,
+.section-3,
+.section-5 {
+    background-color: var(--white);
+}
+
+.section-2 {
+    background-color: var(--orange);
+}
+
+.section-4 {
+    background-color: var(--orange);
+}
+
+footer {
+    background-color: var(--grey);
+}
