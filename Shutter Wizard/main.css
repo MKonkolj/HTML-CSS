@@ -12,15 +12,15 @@ Da li je html struktira dobra? Konkretno to što ide div pa nav pa tek onda head
 }
 
 @font-face {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans";
     font-weight: 400;
-    src: url(fonts/OpenSans-Regular.ttf);
+    src: url(fonts/OpenSans-Regular.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans";
     font-weight: 700;
-    src: url(fonts/OpenSans-Bold.ttf);
+    src: url(fonts/OpenSans-Bold.ttf) format("truetype");
 }
 
 *,
@@ -79,6 +79,14 @@ a:hover {
     text-decoration: underline;
 }
 
+.section-4 h2,
+.section-4 p,
+.section-4 a {
+    color: var(--white);
+}
+
+/* buttons ******************************************/
+
 .press-button {
     font-size: 14px;
     font-weight: 700;
@@ -93,13 +101,7 @@ a:hover {
     text-decoration: none;
 }
 
-.section-4 h2,
-.section-4 p,
-.section-4 a {
-    color: var(--white);
-}
-
-/* utilities ********************************************************/
+/* utilities ********************************************/
 
 .container {
     width: min(90%, 1100px);
@@ -108,6 +110,12 @@ a:hover {
 
 .grid {
     display: grid;
+    grid-template-columns: 1fr;
+}
+
+.grid-item {
+    display: grid;
+    justify-items: center;
 }
 
 .flex-center {
@@ -191,7 +199,9 @@ ul li {
 /* header styling ********************************************/
 
 .header-background {
-    background-image: url(img/header-background-overlay.png), url(img/header-background-1.png);
+    background-image:
+        url(img/header-background-overlay.png),
+        url(img/header-background-1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: -412px;
@@ -205,7 +215,7 @@ ul li {
 }
 
 .header-image img {
-    width: 95%
+    width: 95%;
 }
 
 /* sections styling *******************************************/
@@ -220,10 +230,6 @@ ul li {
     background-color: var(--orange);
 }
 
-.section-4 {
-    background-color: var(--orange);
-}
-
 footer {
     background-color: var(--grey);
 }
@@ -234,13 +240,104 @@ footer {
     margin: 50px auto;
 }
 
+.section-1-img {
+    width: min(100%, 644px);
+}
+
 /* section 2 */
 
 .section-2-img {
     margin-top: 50px;
+    width: min(100%, 530px);
+}
+
+/* section 3 */
+
+.feature {
+    margin-top: 66px;
+}
+
+.feature p {
+    margin-block: 35px 25px;
+}
+
+.feature a {
+    justify-self: end;
+}
+
+/* section 4  */
+
+.section-4 {
+    background:
+        linear-gradient(0deg, rgba(252, 180, 64, 0.9),
+        rgba(252, 180, 64, 0.9)), url(img/section-4-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.section-4 h2 {
+    padding-top: 50px;
+}
+
+.testemonials-container {
+    justify-items: center;
+}
+
+.testemonial {
+    width: min(100%, 320px);
+    padding-bottom: 50px;
+}
+
+.testemonial img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 56px auto;
+}
+
+.testemonial-name {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.testemonial a {
+    display: block;
+    text-align: right;
+}
+
+/* section 5 */
+
+.logo-bar img {
+    width: 100%;
 }
 
 /* media query **************************************************/
+
+@media only screen and (min-width: 576px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 54px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 54px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 54px;
+    }
+
+    h2 + p {
+        padding-inline: 46px;
+    }
+}
 
 @media only screen and (min-width: 1100px) {
     .flex-sidebyside {
@@ -251,8 +348,13 @@ footer {
         background-position: center;
     }
 
+    .header-image img {
+        width: 100%;
+    }
+
     .section-1-img {
         margin-bottom: 50px;
+        width: 644px;
     }
 
     .section-2 .flex-center {
@@ -262,10 +364,15 @@ footer {
 
     .section-2-img {
         margin-bottom: 65px;
+        width: 530px;
     }
 
     .section-2-text h2 {
         text-align: left;
         margin-bottom: 62px;
+    }
+
+    .section-2-text p {
+        padding: 0;
     }
 }
