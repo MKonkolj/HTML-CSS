@@ -176,6 +176,11 @@ a:hover {
     padding: 6px 0;
 }
 
+.pre-nav-container {
+    position: sticky;
+    top: 0;
+}
+
 .nav-logo {
     display: block;
     margin: 0 auto;
@@ -380,11 +385,14 @@ footer p {
     filter: invert(50%) sepia(11%) saturate(1370%) hue-rotate(158deg) brightness(92%) contrast(84%);
 }
 
+.form-container {
+    width: min(100%, 500px);
+}
+
 form {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px 6px;
-    width: min(100%, 450px);
 }
 
 label {
@@ -429,8 +437,7 @@ label {
 
 .submit-btn {
     border-radius: 28px;
-    width: 218px;
-    padding: 12px 0;
+    padding: 12px 45px;
     margin-top: 30px;
     width: 100%;
     color: var(--white);
@@ -516,7 +523,6 @@ label {
     }
 
     .submit-btn {
-        padding: 12px 45px;
         margin-left: auto;
         width: auto;
     }
