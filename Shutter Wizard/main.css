@@ -137,6 +137,8 @@ a:hover {
 
 .pre-nav-container {
     background-color: var(--pre-nav-grey);
+    position: relative;
+    z-index: 4;
 }
 
 .pre-nav {
@@ -173,6 +175,7 @@ a:hover {
 .logo-section {
     background-color: var(--orange);
     filter: drop-shadow(-1.902px 0.618px 2.5px rgba(0,1,1,0.41));
+    position: relative;
     z-index: 3;
     display: flex;
     justify-content: space-between;
@@ -505,8 +508,8 @@ label {
 }
 
 .inputs {
-    background-color: #626262;
-    border: 1px solid #777;
+    background-color: var(--grey);
+    border: 1px solid var(--white);
     border-radius: 4px;
     font-size: 18px;
     letter-spacing: 1px;
@@ -519,12 +522,12 @@ label {
 }
 
 .inputs:hover {
-    border: 1px solid #578199;
+    border: 1px solid var(--light-blue);
 }
 
 .inputs::placeholder {
     opacity: 1;
-    color: #fff;
+    color: var(--white);
 }
 
 .textarea {
@@ -537,15 +540,15 @@ label {
 
 .submit-btn {
     border-radius: 28px;
-    padding: 12px 45px;
+    padding: 6px 45px;
     margin-top: 30px;
     width: 100%;
     color: var(--white);
 }
 
 .submit-btn:active {
-    background-color: #fff;
-    color: #578199;
+    background-color: var(--white);
+    color: var(--light-blue);
 }
 
 .copyright {
