@@ -130,6 +130,11 @@ a:hover {
 
 /* nav styling *********************************************/
 
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
 .pre-nav-container {
     background-color: var(--pre-nav-grey);
 }
@@ -167,6 +172,11 @@ a:hover {
 
 .logo-section {
     background-color: var(--orange);
+    filter: drop-shadow(-1.902px 0.618px 2.5px rgba(0,1,1,0.41));
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-section {
@@ -174,11 +184,32 @@ a:hover {
     border-top: 1px solid var(--pre-nav-grey);
     filter: drop-shadow(-1.902px 0.618px 2.5px rgba(0,1,1,0.41));
     padding: 6px 0;
+    z-index: 2;
+    position: absolute;
+    top: 147px;
+    width: 100%;
+    transform: translateY(-900px);
+    transition: all 300ms ease-in-out;
+}
+
+.nav-section.show {
+    transform: translateY(0px);
+}
+
+.nav-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-section ul li {
+    padding: 40px 0;
 }
 
 .nav-logo {
     display: block;
-    margin: 0 auto;
+    margin: 0 5vw;
     padding: 14px 0;
 }
 
@@ -199,8 +230,54 @@ ul li {
 
 ul li:hover {
     text-decoration: underline;
+    text-decoration-color: var(--pre-nav-grey);
+    text-decoration-thickness: 5px;
+    text-underline-offset: 6px;
 }
 
+/* burger */
+
+.burger {
+    display: block;
+    margin-right: 5vw;
+}
+
+.burger div {
+    background-color: #333;
+    width: 42px;
+    height: 5px;
+    margin-bottom: 4px;
+}
+
+.burger div:last-child {
+    margin: 0;
+}
+
+.bar {
+    transition: all 300ms ease-in-out;
+}
+
+.bar1 {
+    transform-origin: left center;
+}
+
+.bar3 {
+    transform-origin: right center;
+}
+
+.bar1.active {
+    transform: rotate(45deg) translate(0px, -8px);
+    width: 25px;
+}
+
+.bar2.active {
+    transform: rotate(-45deg);
+}
+
+.bar3.active {
+    transform: rotate(45deg) translate(11px, -3px);
+    width: 25px;
+}
 
 /* header styling ********************************************/
 
@@ -213,6 +290,7 @@ ul li:hover {
     background-position: -412px;
     height: 895px;
     position: relative;
+    z-index: -1;
 }
 
 .header-image {
@@ -525,6 +603,31 @@ label {
 
     h2 + p {
         padding-inline: 46px;
+    }
+
+    .logo-section {
+        position: static;
+    }
+
+    .nav-logo {
+        margin: 0 auto;
+    }
+
+    .nav-section {
+        transform: translateY(0px);
+    }
+
+    .nav-section ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .nav-section ul li {
+        padding: 0;
+    }
+
+    .burger {
+        display: none;
     }
 
     .footer-container {
