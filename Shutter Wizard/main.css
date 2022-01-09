@@ -47,6 +47,8 @@ body {
 h1 {
     font-size: 53px;
     color: var(--white);
+    font-weight: 400;
+    margin-bottom: 37px;
 }
 
 h2,
@@ -60,6 +62,12 @@ h2 {
     font-size: 42px;
     font-weight: 700;
     text-transform: uppercase;
+    text-align: center;
+    margin-block: 50px 20px ;
+}
+
+p {
+    margin-bottom: 40px;
 }
 
 a {
@@ -71,7 +79,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.button {
+.press-button {
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
@@ -80,7 +88,7 @@ a:hover {
     padding: 10px 46px;
 }
 
-.button:hover {
+.press-button:hover {
     background-color: var(--orange);
     text-decoration: none;
 }
@@ -102,17 +110,36 @@ a:hover {
     display: grid;
 }
 
-/* nav & header styling *********************************************/
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.pre-nav {
+.flex-sidebyside {
+    flex-direction: column;
+}
+
+/* nav styling *********************************************/
+
+.pre-nav-container {
     background-color: var(--pre-nav-grey);
 }
 
-.pre-nav .flex-container {
-    display: flex;
+.pre-nav {
     justify-content: space-between;
-    align-items: center;
     height: 25px;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.login-container a:first-child {
+    border-right: 1px solid var(--pre-nav-text);
+    padding-right: 6px;
 }
 
 .search-btn {
@@ -121,6 +148,7 @@ a:hover {
     background-repeat: no-repeat;
     width: 17px;
     height: 15px;
+    margin-left: 21px;
 }
 
 .pre-nav a {
@@ -128,11 +156,56 @@ a:hover {
     color: var(--pre-nav-text);
 }
 
+.logo-section {
+    background-color: var(--orange);
+}
+
+.nav-section {
+    background-color: var(--orange);
+    border-top: 1px solid var(--pre-nav-grey);
+    filter: drop-shadow(-1.902px 0.618px 2.5px rgba(0,1,1,0.41));
+    padding: 6px 0;
+}
+
+.nav-logo {
+    display: block;
+    margin: 0 auto;
+    padding: 14px 0;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul li {
+    text-decoration: none;
+    list-style: none;
+    text-indent: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: var(--grey);
+}
+
+
+/* header styling ********************************************/
+
 .header-background {
     background-image: url(img/header-background-overlay.png), url(img/header-background-1.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: -412px;
     height: 895px;
+    position: relative;
+}
+
+.header-image {
+    position: absolute;
+    bottom: 0;
+}
+
+.header-image img {
+    width: 95%
 }
 
 /* sections styling *******************************************/
@@ -153,4 +226,46 @@ a:hover {
 
 footer {
     background-color: var(--grey);
+}
+
+/* section 1 */
+
+.press-button {
+    margin: 50px auto;
+}
+
+/* section 2 */
+
+.section-2-img {
+    margin-top: 50px;
+}
+
+/* media query **************************************************/
+
+@media only screen and (min-width: 1100px) {
+    .flex-sidebyside {
+        flex-direction: row;
+    }
+
+    .header-background {
+        background-position: center;
+    }
+
+    .section-1-img {
+        margin-bottom: 50px;
+    }
+
+    .section-2 .flex-center {
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .section-2-img {
+        margin-bottom: 65px;
+    }
+
+    .section-2-text h2 {
+        text-align: left;
+        margin-bottom: 62px;
+    }
 }
