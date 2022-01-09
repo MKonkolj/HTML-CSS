@@ -134,15 +134,17 @@
     </section>
     <footer>
         <div class="footer-container container">
-            <form>
-                <p>Get in touch</p>
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <input type="submit">
-            </form>
+            <div class="form-container">
+                <form>
+                    <label for="contactForm">Get in touch</label>
+                    <input class="inputs" type="text" placeholder="First Name">
+                    <input class="inputs" type="text" placeholder="Last Name">
+                    <input class="inputs" type="text" placeholder="Email">
+                    <input class="inputs" type="text" placeholder="Phone">
+                    <textarea class="inputs textarea" name="" id="" cols="30" rows="6" placeholder="Message"></textarea>
+                </form>
+                <input class="inputs submit-btn" type="submit" value="Send Message">
+            </div>
             <div class="address-container flex-center">
                 <img src="img/logo-shutter.png" alt="shutter wizard logo">
                 <p>Address</p>
