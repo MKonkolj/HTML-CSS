@@ -176,11 +176,6 @@ a:hover {
     padding: 6px 0;
 }
 
-.pre-nav-container {
-    position: sticky;
-    top: 0;
-}
-
 .nav-logo {
     display: block;
     margin: 0 auto;
