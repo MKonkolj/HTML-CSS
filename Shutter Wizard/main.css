@@ -31,6 +31,10 @@ Da li je html struktira dobra? Konkretno to što ide div pa nav pa tek onda head
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth
+}
+
 html,
 body {
     width: 100%;
@@ -221,7 +225,8 @@ ul {
     justify-content: space-evenly;
 }
 
-ul li {
+ul li,
+ul li a {
     text-decoration: none;
     list-style: none;
     text-indent: 0;
@@ -231,7 +236,8 @@ ul li {
     cursor: pointer;
 }
 
-ul li:hover {
+ul li:hover,
+ul li a:hover {
     text-decoration: underline;
     text-decoration-color: var(--pre-nav-grey);
     text-decoration-thickness: 5px;
