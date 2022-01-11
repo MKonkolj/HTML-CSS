@@ -73,7 +73,7 @@ h4 {
 /* utilities */
 
 .container {
-    width: min(90%, 1000px);
+    width: min(90%, 1240px);
     margin: 0 auto;
 }
 
@@ -92,16 +92,83 @@ h4 {
 }
 
 .btn {
-
+    background-color: var(--blue);
 }
 
 /* section styling  */
 /* header */
 
-.header-container {
+header {
     background-color: var(--pink);
+}
+
+.header-container {
+    height: 100px;
     display: grid;
-    
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container img {
+    height: 66px;
+    z-index: 5;
+}
+
+.shopping-cart {
+    display: none;
+    justify-self: end;
+}
+
+.nav-menu {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform:translateX(-50%) translateY(-500px);
+    transition: transform 300ms ease-out;
+    z-index: 1;
+}
+
+.nav-menu.open {
+    background-color: var(--pink);
+    width: 100%;
+    transform: translateX(-50%) translateY(100px);
+}
+
+.nav-menu.open li {
+    padding-block: 40px;
+}
+
+/* burger */
+
+.burger {
+    justify-self: end;
+    z-index: 4;
+}
+
+.bar {
+    width: 40px;
+    height: 4px;
+    background-color: var(--blue);
+    border-radius: 3px;
+    margin: 3px;
+    transition:
+        transform 300ms ease-in,
+        width 300ms ease-in;
+}
+
+.burger.open .bar1 {
+    transform: rotate(45deg) translate(1px, -2px);
+    width: 16px;
+}
+
+.burger.open .bar2 {
+    transform: rotate(-45deg);
+}
+
+.burger.open .bar3 {
+    transform: rotate(45deg) translate(15px, -12px);
+    width: 16px;
 }
 
 /* section 1 */
@@ -117,3 +184,37 @@ h4 {
     background-size: cover;
 }
 
+/* media query */
+
+@media (min-width: 576px) {
+    
+}
+
+@media (min-width: 768px) {
+    
+}
+
+@media (min-width: 992px) {
+    .shopping-cart {
+        display: block;
+    }
+    .burger {
+        display: none;
+    }
+    .nav-menu {
+        position: static;
+        top: 0;
+        left: 0;
+        transform:translateX(0) translateY(0);
+        grid-column-start: span 2;
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1200px) {
+    
+}
