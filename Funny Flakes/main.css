@@ -37,16 +37,20 @@ h2, h3, h4, a {
 }
 
 h1 {
-    font-size: 145px;
-    line-height: 145px;
+    font-size: min(10vw, 145px);
+    line-height: min(10vw, 145px);
     font-weight: 500;
+    padding-top: 70px;
 }
 
 h1 span {
     display: block;
+}
+
+.tagline {
     font-family: "Sacramento";
-    font-size: 69px;
-    line-height: 69px;
+    font-size: min(4.9vw, 69px);
+    padding-top: 18px;
 }
 
 h2 {
@@ -54,6 +58,10 @@ h2 {
     letter-spacing: 8px;
     line-height: 53px;
     font-weight: 700;
+}
+
+h2 + p {
+    margin-block: 30px 70px;
 }
 
 h3 {
@@ -68,6 +76,7 @@ h4 {
     letter-spacing: 1px;
     line-height: 14px;
     font-weight: 700;
+    margin-bottom: 20px;
 }
 
 /* utilities */
@@ -110,12 +119,13 @@ header {
     align-items: center;
 }
 
-.header-container img {
+.logo {
     height: 66px;
     z-index: 5;
 }
 
 .shopping-cart {
+    height: 38px;
     display: none;
     justify-self: end;
 }
@@ -175,32 +185,95 @@ header {
 
 .section-1 {
     background-color: var(--pink);
+    position: relative;
+    padding-bottom: min(21.735vw, 267.5px);
 }
 
+.section-1::after {
+    content: "";
+    width: min(43.47vw, 535px);
+    height: min(43.47vw, 535px);
+    background-image: url(img/cereal-bowl.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+/* section 2 */
+
 .section-2 {
-    background-image: url(img/dots-background.png);
+    background: url(img/dots-background.png), var(--white);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    padding-top: min(calc(21.735vw + 90px), 357.5px);
+}
+
+.menu-section {
+    border: 2px solid var(--blue);
+    background-color: var(--white);
+    padding: 65px 30px;
+}
+
+.menu-title {
+    border: 2px solid var(--blue);
+    background-color: var(--pink);
+    padding-block: 34px;
+    margin-bottom: 40px;
+}
+
+.menu-items {
+    margin-block: 40px;
+    text-align: left;
+    width: 300px;
+}
+
+.menu-list li {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
+
+.menu-list span {
+    margin-inline: 20px;
+}
+
+.h-line {
+    background-color: var(--blue);
+    height: 2px;
+    width: 100%;
+    margin-block: 30px;
 }
 
 /* media query */
 
 @media (min-width: 576px) {
-    
+
 }
 
 @media (min-width: 768px) {
+    .menu-items {
+        width: 300px;
+    }
     
+    .menu-section {
+        padding: 65px 100px;
+    }
 }
 
 @media (min-width: 992px) {
+
     .shopping-cart {
         display: block;
     }
+
     .burger {
         display: none;
     }
+
     .nav-menu {
         position: static;
         top: 0;
@@ -210,11 +283,29 @@ header {
         display: flex;
         justify-content: space-between;
     }
+
     .header-container {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .menu-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .menu-milk {
+        justify-self: end;
     }
 }
 
 @media (min-width: 1200px) {
-    
+    .menu-list span {
+        margin-inline: 30px;
+    }
+
+    .menu-items {
+        width: 400px;
+    }
+
+    .menu-list {
+        width: 400px;
+    }
 }
