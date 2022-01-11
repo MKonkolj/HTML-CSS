@@ -18,7 +18,21 @@
 </head>
 <body>
     <!-- HEADER -->
-    <header></header>
+    <header>
+        <div class="header-container">
+            <img src="img/logo.png" alt="funny flakes logo">
+            <ul class="nav-bar reset">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#combo">Combo</a></li>
+                <li><a href="#aboutus">About us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <img src="img/shopping-cart.png" alt="cart">
+            <div class="burger">
+                <div class="bar bar1"></div>
+            </div>
+        </div>
+    </header>
     <!-- WE ARE FUNNY FLAKES -->
     <section class="section-1">
         <div class="container">
@@ -26,7 +40,7 @@
         </div>
     </section>
     <!-- MENU SECTION -->
-    <section class="section-2">
+    <section class="section-2" id="menu">
         <div class="container">
             <h2>Menu</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
@@ -74,7 +88,7 @@
         </div>
     </section>
     <!-- COMBOS SECTION -->
-    <section class="section-3">
+    <section class="section-3" id="combo">
         <div class="container">
             <h2>Combos</h2>
             <p>We have the Funny Flakes perfect combos.<span>Choose your best option</span></p>
@@ -82,12 +96,12 @@
                 <div class="combo-card">
                     <h4>Combo 1</h4>
                     <p><span>Oatmeal with milk optional fruits</span>-<span>optional enchange milk for yoghourt</span>-<span>cheesecake</span><span class="combo-price">$XXX</span></p>
-                    <a href="#">Add to cart</a>
+                    <a href="#" class="btn combo-btn reset">Add to cart</a>
                 </div>
                 <div class="combo-card">
                     <h4>Combo 1</h4>
                     <p><span>Oatmeal with milk optional fruits</span>-<span>optional enchange milk for yoghourt</span>-<span>cheesecake</span><span class="combo-price">$XXX</span></p>
-                    <a href="#">Add to cart</a>
+                    <a href="#" class="btn combo-btn reset">Add to cart</a>
                 </div>
                 <div class="combo-card">
                     <h4>Combo 1</h4>
@@ -98,7 +112,7 @@
         </div>
     </section>
     <!-- TILES SECTION -->
-    <section class="section-4">
+    <section class="section-4" id="aboutus">
         <div class="tile tile1">
             <img src="img/heart-bowl.png" alt="Heart-shaped bowl with cereal">
         </div>
@@ -128,8 +142,8 @@
         </div>
     </section>
     <!-- FOOTER -->
-    <footer class="footer-section grid grid-center">
-        <div class="footer-container grid">
+    <footer class="footer-section grid-center" id="contact">
+        <div class="footer-container">
             <div class="info">
                 <p>Here we are</p>
                 <p>358 West 58th. Street, 10019</p>
