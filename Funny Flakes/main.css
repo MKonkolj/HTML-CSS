@@ -437,6 +437,10 @@ header {
 
 /* info section */
 
+.footer-section {
+    background-color: var(--white);
+}
+
 .footer-container {
     margin-block: 135px 100px;
     display: grid;
@@ -597,7 +601,7 @@ header {
         grid-template-columns: auto auto auto;
     }
     .tiles-container {
-        width: 1200px;
+        width: 1400px;
         margin: 0 auto;
     }
 
