@@ -90,7 +90,7 @@ h4 {
 /* utilities */
 
 .container {
-    width: min(90%, 1240px);
+    width: min(90%, 1000px);
     margin: 0 auto;
 }
 
@@ -477,6 +477,42 @@ header {
 
 .follow-us img {
     height: 23px;
+    cursor: pointer;
+}
+
+/* subscribe button and field */
+
+.info-subsrcibe {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+input[type=text] {
+    border: 2px solid var(--blue);
+    padding: 9px 16px;
+    background-color: var(--white);
+    font-weight: 500;
+    color: var(--blue);
+    width: min(80%, 300px);
+    margin-inline: auto;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+.subscribe-btn {
+    font-family: "Poppins";
+    font-size: 14px;
+    background-color: var(--blue);
+    color: var(--white);
+    text-transform: uppercase;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 21px;
+    margin-top: 20px;
+    width: min(50%, 165px);
+    margin-inline: auto;
 }
 
 /* copyright  */
@@ -590,7 +626,7 @@ header {
 
     .menu-items,
     .menu-list {
-        width: 400px;
+        width: 370px;
     }
 
     .combos-section {
@@ -627,9 +663,28 @@ header {
     .follow-us img {
         height: 23px;
     }
+
+    .info-subsrcibe {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 38.5px;
+        align-self: center;
+    }
+
+    input[type=text] {
+        width: 90%;
+        height: 38.5px;
+        margin-inline: 0 auto;
+    }
+    
+    .subscribe-btn {
+        width: 150px;
+        margin: 0 auto 0 0;
+        align-self: center;
+    }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
 
     .tiles-container {
         width: 1400px;
