@@ -24,7 +24,8 @@ html {
 
 body {
     font-family: "Poppins";
-    font-size: 21px;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.8863636363636364rem + 0.5681818181818182vw, 1.3125rem);
     font-weight: 400;
     text-align: center;
     color: var(--blue);
@@ -37,8 +38,10 @@ h2, h3, h4, a {
 }
 
 h1 {
-    font-size: min(10vw, 145px);
-    line-height: min(10vw, 145px);
+    font-size: 2rem;
+    font-size: clamp(2rem, -0.5681818181818179rem + 12.840909090909088vw, 9.0625rem);
+    line-height: 2rem;
+    line-height: clamp(2rem, -0.5681818181818179rem + 12.840909090909088vw, 9.0625rem);
     font-weight: 500;
     padding-top: 70px;
 }
@@ -49,12 +52,14 @@ h1 span {
 
 .tagline {
     font-family: "Sacramento";
-    font-size: min(4.9vw, 69px);
+    font-size: 2rem;
+    font-size: clamp(2rem, 1.1590909090909092rem + 4.204545454545454vw, 4.3125rem);
     padding-top: 18px;
 }
 
 h2 {
-    font-size: 81px;
+    font-size: 2rem;
+    font-size: clamp(2rem, 0.8863636363636365rem + 5.568181818181818vw, 5.0625rem);
     letter-spacing: 8px;
     line-height: 53px;
     font-weight: 700;
@@ -65,14 +70,16 @@ h2 + p {
 }
 
 h3 {
-    font-size: 27px;
+    font-size: 0.9375rem;
+    font-size: clamp(0.9375rem, 0.6647727272727273rem + 1.3636363636363635vw, 1.6875rem);
     letter-spacing: 5px;
     line-height: 21px;
     font-weight: 500;
 }
 
 h4 {
-    font-size: 19px;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.9318181818181819rem + 0.3409090909090909vw, 1.1875rem);
     letter-spacing: 1px;
     line-height: 14px;
     font-weight: 700;
@@ -206,7 +213,7 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: min(calc(21.735vw + 90px), 357.5px);
+    padding-block: min(calc(21.735vw + 90px), 357.5px) 80px;
 }
 
 .menu-section {
@@ -275,11 +282,75 @@ header {
     display: block;
     color: var(--white);
     background-color: var(--blue);
-    padding: 22px 60px;
-    border-radius: 85px;
+    padding: 20px 60px;
+    border-radius: 90px;
     margin: 50px auto 0;
     width: 270px;
     height: 75px;
+    border: 1px solid var(--blue);
+}
+
+.menu-btn:hover {
+    background-color: var(--light-blue);
+    color: var(--blue);
+}
+
+.menu-btn:active {
+    background-color: var(--white);
+}
+
+/* combos section */
+
+.section-3 {
+    background-color:var(--light-blue);
+    padding-block: 80px;
+}
+
+.combos-tagline span {
+    display: block;
+}
+
+.combos-section {
+    gap: 60px;
+}
+
+.combo-card {
+    background-color: var(--pink);
+    border: 2px solid var(--blue);
+    padding: 50px;
+}
+
+.combo-card p {
+    width: 18ch;
+    text-transform: uppercase;
+}
+
+.combo-card span {
+    display: block;
+}
+
+.combo-price {
+    display: block;
+    font-weight: 700;
+}
+
+.combo-btn {
+    display: block;
+    padding: 15px 45px;
+    background-color: var(--pink);
+    border-radius: 30px;
+    border: 2px solid var(--blue);
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.combo-btn:hover {
+    background-color: var(--white);
+}
+
+.combo-btn:active {
+    background-color: var(--white);
+    border-color: var(--white);
 }
 
 /* media query */
@@ -347,6 +418,10 @@ header {
     .menu-exchange-items h4 {
         margin: 0;
     }
+
+    .combos-section {
+        grid-template-columns: auto auto;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -357,5 +432,9 @@ header {
     .menu-items,
     .menu-list {
         width: 400px;
+    }
+
+    .combos-section {
+        grid-template-columns: auto auto auto;
     }
 }
