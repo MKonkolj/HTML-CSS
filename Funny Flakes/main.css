@@ -356,10 +356,6 @@ header {
 
 /* tiles section */
 
-.section-4 {
-    background-color: var(--white);
-}
-
 .tiles-container {
     background-color: var(--pink);
     display: grid;
@@ -600,10 +596,6 @@ header {
     .combos-section {
         grid-template-columns: auto auto auto;
     }
-    .tiles-container {
-        width: 1400px;
-        margin: 0 auto;
-    }
 
     .footer-container {
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -634,5 +626,20 @@ header {
     
     .follow-us img {
         height: 23px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .tiles-container {
+        width: 1400px;
+        margin: 0 auto;
+    }
+
+    .section-4 {
+        background: url(img/dots-background.png), var(--white);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
 }
