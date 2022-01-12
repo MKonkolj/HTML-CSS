@@ -39,10 +39,10 @@ h2, h3, h4, a {
 }
 
 h1 {
-    font-size: 2rem;
-    font-size: clamp(2rem, -0.5681818181818179rem + 12.840909090909088vw, 9.0625rem);
-    line-height: 2rem;
-    line-height: clamp(2rem, -0.5681818181818179rem + 12.840909090909088vw, 9.0625rem);
+    font-size: 4rem;
+    font-size: clamp(4rem, 2.159090909090909rem + 9.204545454545453vw, 9.0625rem);
+    line-height: 4rem;
+    line-height: clamp(4rem, 2.159090909090909rem + 9.204545454545453vw, 9.0625rem);
     font-weight: 500;
     padding-top: 70px;
 }
@@ -53,8 +53,8 @@ h1 span {
 
 .tagline {
     font-family: "Sacramento";
-    font-size: 2rem;
-    font-size: clamp(2rem, 1.1590909090909092rem + 4.204545454545454vw, 4.3125rem);
+    font-size: 2.625rem;
+    font-size: clamp(2.625rem, 2.0113636363636362rem + 3.0681818181818183vw, 4.3125rem);
     padding-top: 18px;
 }
 
@@ -113,6 +113,9 @@ h4 {
 
 header {
     background-color: var(--pink);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .header-container {
@@ -125,7 +128,7 @@ header {
 
 .logo {
     height: 66px;
-    z-index: 5;
+    z-index: 15;
 }
 
 .shopping-cart {
@@ -140,7 +143,7 @@ header {
     left: 50%;
     transform:translateX(-50%) translateY(-500px);
     transition: transform 300ms ease-out;
-    z-index: 1;
+    z-index: 11;
 }
 
 .nav-menu.open {
@@ -157,7 +160,7 @@ header {
 
 .burger {
     justify-self: end;
-    z-index: 4;
+    z-index: 14;
 }
 
 .bar {
@@ -190,13 +193,13 @@ header {
 .section-1 {
     background-color: var(--pink);
     position: relative;
-    padding-bottom: min(21.735vw, 267.5px);
+    padding-bottom: min(31vw, 267.5px);
 }
 
 .section-1::after {
     content: "";
-    width: min(43.47vw, 535px);
-    height: min(43.47vw, 535px);
+    width: min(62vw, 535px);
+    height: min(62vw, 535px);
     background-image: url(img/cereal-bowl.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -233,12 +236,17 @@ header {
 .menu-items {
     margin-block: 40px;
     text-align: left;
-    width: calc(90vw - 120px);
+}
+
+.menu-exchange-items,
+.menu-items {
+    width: calc(90vw - 60px);
 }
 
 .menu-list li {
     display: grid;
     grid-template-columns: 1fr auto auto;
+    align-items: center;
 }
 
 .menu-list span {
@@ -254,7 +262,8 @@ header {
 
 .menu-exchange-title {
     text-transform: uppercase;
-    letter-spacing: 9.99px;
+    letter-spacing: 0.125rem;
+    letter-spacing: clamp(0.125rem, -0.05659090909090908rem + 0.9079545454545455vw, 4.89px);
 }
 
 .menu-exchange-items {
@@ -262,13 +271,13 @@ header {
     flex-direction: column;
     justify-content: center;
     margin: 35px auto;
-    width: calc(90vw - 120px);
 }
 
 .menu-exchange-items li {
     display: grid;
     grid-template-columns: 1fr auto auto;
     text-align: left;
+    align-items: center;
 }
 
 .menu-exchange-items li h4 {
@@ -283,21 +292,38 @@ header {
     display: block;
     color: var(--white);
     background-color: var(--blue);
+    line-height: 32px;
     padding: 20px 60px;
     border-radius: 90px;
     margin: 50px auto 0;
-    width: 270px;
+    width: 14.375rem;
+    width: clamp(14.375rem, 13.46590909090909rem + 4.545454545454546vw, 16.875rem);
     height: 75px;
     border: 1px solid var(--blue);
 }
 
-.menu-btn:hover {
+.menu-btn:hover,
+.subscribe-btn:hover {
     background-color: var(--light-blue);
     color: var(--blue);
 }
 
-.menu-btn:active {
+.menu-btn:active,
+.subscribe-btn:active {
     background-color: var(--white);
+}
+
+input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--blue);
+    background: transparent;
+    appearance: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background: var(--pink);
 }
 
 /* combos section */
@@ -337,7 +363,7 @@ header {
 
 .combo-btn {
     display: block;
-    padding: 15px 45px;
+    padding: 15px min(10vw + 3px, 45px);
     background-color: var(--pink);
     border-radius: 30px;
     border: 2px solid var(--blue);
@@ -402,7 +428,7 @@ header {
 
 .creator {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr;
     gap: 16px 38px;
 }
 
@@ -447,6 +473,7 @@ header {
 .info p:first-child {
     font-weight: 500;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .info p:nth-child(2) {
@@ -507,7 +534,7 @@ input[type=text]:focus {
     background-color: var(--blue);
     color: var(--white);
     text-transform: uppercase;
-    border: none;
+    border: 1px solid var(--blue);
     padding: 10px 16px;
     border-radius: 21px;
     margin-top: 20px;
@@ -526,7 +553,31 @@ input[type=text]:focus {
     padding-block: 25px;
 }
 
+.back-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 125px;
+    height: 25px;
+    font-size: 16px;
+    background-color: var(--pink);
+    color: var(--blue);
+    border-radius: 15px 0 0 0;
+}
+
 /* media query */
+@media (min-width: 390px) {
+    .menu-items,
+    .menu-exchange-items {
+        width: calc(90vw - 120px)
+    }
+}
+
+@media (min-width: 496px) {
+    .creator {
+        grid-template-columns: auto 1fr;
+    }
+}
 
 @media (min-width: 576px) {
     .menu-section {
@@ -612,11 +663,6 @@ input[type=text]:focus {
     .combos-section {
         grid-template-columns: auto auto;
     }
-
-    .tile {
-        aspect-ratio: 1 / 1;
-    }
-
 }
 
 @media (min-width: 1200px) {
@@ -631,6 +677,10 @@ input[type=text]:focus {
 
     .combos-section {
         grid-template-columns: auto auto auto;
+    }
+
+    .tile {
+        aspect-ratio: 1 / 1;
     }
 
     .footer-container {
@@ -692,7 +742,7 @@ input[type=text]:focus {
     }
 
     .section-4 {
-        background: url(img/dots-background.png), var(--white);
+        background-color: var(--pink);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;

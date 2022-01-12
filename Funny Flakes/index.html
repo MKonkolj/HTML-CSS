@@ -19,7 +19,7 @@
 <body>
     <!-- HEADER -->
     <header>
-        <div class="header-container container">
+        <div class="header-container container" id="top">
             <img class="logo" src="img/logo.png" alt="funny flakes logo">
             <ul class="nav-menu reset">
                 <li><a href="#menu">Menu</a></li>
@@ -161,9 +161,9 @@
             <div class="info info-image">
                 <img src="img/milk-bowl.png" alt="Milk and a bowl of cereal">
             </div>
-            <form class="info info-subsrcibe" action="action.php">
+            <form class="info info-subsrcibe">
                 <input class="subscribe-email" type="text" placeholder="E-mail">
-                <input class="subscribe-btn" type="submit" value="Subscribe">
+                <input class="subscribe-btn" onclick="subscribed()" type="submit" value="Subscribe">
             </form>
             <div class="info follow-us">
                 <p>Follow us</p>
@@ -173,6 +173,9 @@
         </div>
         <div class="copyright">
             <p>© 2019 Funny Flakes. All rights reserved</p>
+        </div>
+        <div class="back-top reset">
+            <a href="#top">back to top</a>
         </div>
     </footer>
 <!-- Script -->
