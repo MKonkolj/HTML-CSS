@@ -1,6 +1,7 @@
 :root {
     --blue: #1d4c8b;
     --pink: #f5d1c9;
+    --baby-pink: #fae7e3;
     --light-blue: #a8baca;
     --white: #fff8ee;
 }
@@ -353,6 +354,87 @@ header {
     border-color: var(--white);
 }
 
+/* tiles section */
+
+.section-4 {
+    background-color: var(--white);
+}
+
+.tiles-container {
+    background-color: var(--pink);
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.tile {
+    padding: min(10%, 135px);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.tile1 {
+    background-color: var(--baby-pink);
+}
+
+.tile1 img {
+    width: 100%;
+}
+
+.tile2 {
+    text-align: left;
+    order: -1;
+    align-items: start;
+}
+
+.tile2 h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-size: clamp(2rem, 1.8181818181818181rem + 0.9090909090909091vw, 2.5rem);
+}
+
+.tile2 p {
+    margin-bottom: 2rem;
+}
+
+.tile3 h2 {
+    text-align: left;
+    font-size: 2rem;
+    font-size: clamp(2rem, 1.8181818181818181rem + 0.9090909090909091vw, 2.5rem);
+    margin-bottom: 60px;
+}
+
+.creator {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px 38px;
+}
+
+.creator1 {
+    margin-bottom: 70px;
+}
+
+.creator img {
+    grid-row-start: span 2;
+}
+
+.creator p {
+    text-align: left;
+}
+
+.creator-name {
+    font-weight: 500;
+}
+
+.tile4 {
+    background-color: var(--light-blue);
+}
+
+.tile4 img {
+    width: 100%;
+    padding: 50px;
+}
+
 /* media query */
 
 @media (min-width: 576px) {
@@ -369,6 +451,15 @@ header {
     .menu-items, 
     .menu-exchange-items {
         width: calc(90vw - 300px);
+    }
+
+    .tiles-container {
+        grid-template-columns: 50% 50%;
+    }
+    
+    .tile2 {
+        text-align: left;
+        order: 0;
     }
 }
 
@@ -422,6 +513,10 @@ header {
     .combos-section {
         grid-template-columns: auto auto;
     }
+
+    .tile {
+        aspect-ratio: 1 / 1;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -436,5 +531,9 @@ header {
 
     .combos-section {
         grid-template-columns: auto auto auto;
+    }
+    .tiles-container {
+        width: 1200px;
+        margin: 0 auto;
     }
 }
