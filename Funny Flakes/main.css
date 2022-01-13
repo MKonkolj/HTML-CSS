@@ -547,7 +547,7 @@ input[type=text]:focus {
 .copyright {
     background-color: var(--light-blue);
     color: var(--blue);
-    width: 100vw;
+    width: 100%;
     font-size: 0.75rem;
     font-size: clamp(0.75rem, 0.6818181818181819rem + 0.3409090909090909vw, 0.9375rem);
     padding-block: 25px;
